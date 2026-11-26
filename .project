@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>AsistenciaMotor</name>
-	<comment></comment>
-	<projects>
-	</projects>
-	<buildSpec>
-		<buildCommand>
-			<name>org.eclipse.jdt.core.javabuilder</name>
-			<arguments>
-			</arguments>
-		</buildCommand>
-	</buildSpec>
-	<natures>
-		<nature>org.eclipse.jdt.core.javanature</nature>
-	</natures>
+.classpath<name>AsistenciaMotor</name>
+.classpath<comment></comment>
+.classpath<projects></projects>
+.classpath<buildSpec>
+.git<buildCommand>
+.gitignore<name>org.eclipse.jdt.core.javabuilder</name>
+.gitignore<arguments></arguments>
+.git</buildCommand>
+.classpath</buildSpec>
+.classpath<natures>
+.git<nature>org.eclipse.jdt.core.javanature</nature>
+.classpath</natures>
 </projectDescription>
