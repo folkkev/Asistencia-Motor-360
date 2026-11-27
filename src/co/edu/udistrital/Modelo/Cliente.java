@@ -9,9 +9,8 @@ public class Cliente {
     public enum TipoCliente {
         PARTICULAR(1),
         FLOTA(2),
-        ASEGURADORA(3),
-        EMERGENCIA_O_SERVICIO_CRITICO(4);
-
+        ASEGURADORA(3);
+    	
         private final int puntos;
 
         TipoCliente(int puntosBase) {

@@ -1,53 +1,78 @@
 package co.edu.udistrital.Modelo;
 
+import java.util.UUID;
+
 public class UnidadMovil {
-    private String placa;
-    private TipoUnidad tipoUnidad;
-    private String zonaUbicacion;
-    private boolean disponible;
+    private final UUID uuid;
+    private CategoriaUnidad categoria;
+    private EstadoOperativo estadoActual;
+    private String zonaOperacion;
+    private NivelDisponibilidad nivelDisponibilidad;
 
-    public enum TipoUnidad {
-        GRUA_PLATAFORMA,
-        TALLER_MOVIL,
-        MOTO_RESCATE_RAPIDO
+    public enum CategoriaUnidad {
+        GRUA,
+        MOTOCICLETA_RESPUESTA_RAPIDA,
+        VEHICULO_UTILITARIO,
+        COCHE_LIGERO
     }
 
-    public UnidadMovil(String placa, TipoUnidad tipoUnidad, String zonaUbicacion) {
-        this.placa = placa;
-        this.tipoUnidad = tipoUnidad;
-        this.zonaUbicacion = zonaUbicacion;
-        this.disponible = true;
+    public enum EstadoOperativo {
+        OPERANDO,
+        EN_TALLER,
+        MANTENIMIENTO,
+        LISTA_PARA_DESPACHO
     }
 
-    public String getPlaca() {
-        return placa;
+    public enum NivelDisponibilidad {
+        DISPONIBLE,
+        ASIGNADA,
+        NO_DISPONIBLE
     }
 
-    public void setPlaca(String placa) {
-        this.placa = placa;
+    public UnidadMovil(CategoriaUnidad categoria, EstadoOperativo estatusActual,
+                       String zonaOperacion, NivelDisponibilidad nivelDisponibilidad) {
+        this.uuid = UUID.randomUUID();
+        this.categoria = categoria;
+        this.estadoActual = estatusActual;
+        this.zonaOperacion = zonaOperacion;
+        this.nivelDisponibilidad = nivelDisponibilidad;
     }
 
-    public TipoUnidad getTipoUnidad() {
-        return tipoUnidad;
+    public UUID getUuid() {
+        return uuid;
     }
 
-    public void setTipoUnidad(TipoUnidad tipoUnidad) {
-        this.tipoUnidad = tipoUnidad;
+
+
+    public CategoriaUnidad getCategoria() {
+        return categoria;
     }
 
-    public String getZonaUbicacion() {
-        return zonaUbicacion;
+    public void setCategoria(CategoriaUnidad categoria) {
+        this.categoria = categoria;
     }
 
-    public void setZonaUbicacion(String zonaUbicacion) {
-        this.zonaUbicacion = zonaUbicacion;
+    public EstadoOperativo getEstatusActual() {
+        return estadoActual;
     }
 
-    public boolean isDisponible() {
-        return disponible;
+    public void setEstatusActual(EstadoOperativo estatusActual) {
+        this.estadoActual = estatusActual;
     }
 
-    public void setDisponible(boolean disponible) {
-        this.disponible = disponible;
+    public String getZonaOperacion() {
+        return zonaOperacion;
+    }
+
+    public void setZonaOperacion(String zonaOperacion) {
+        this.zonaOperacion = zonaOperacion;
+    }
+
+    public NivelDisponibilidad getNivelDisponibilidad() {
+        return nivelDisponibilidad;
+    }
+
+    public void setNivelDisponibilidad(NivelDisponibilidad nivelDisponibilidad) {
+        this.nivelDisponibilidad = nivelDisponibilidad;
     }
 }
